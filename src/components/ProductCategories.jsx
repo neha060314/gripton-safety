@@ -5,16 +5,28 @@ import { Button } from '@/components/ui/button';
 
 const CATEGORIES = [
   {
-    title: 'Lashing Belt',
-    desc: 'Heavy-duty cargo securing belts designed for industrial transportation and logistics safety.',
-    image: 'assets/lashing_belts.webp',
-    path: '/lashing-belt',
+    title: 'One Way Cargo Lashing',
+    desc: 'Reliable single-use cargo securing systems designed for export containers, freight transportation, and logistics applications.',
+    image: '/assets/one_way_cargo.jpg',
+    path: '/products/one-way-cargo-lashing',
   },
   {
-    title: 'Web Sling Belt',
-    desc: 'Industrial lifting slings manufactured using high strength polyester webbing for safe heavy-duty lifting applications.',
+    title: 'Ratchet Lashing',
+    desc: 'Heavy-duty ratchet tie-down systems engineered for secure cargo restraint and transportation safety.',
+    image: '/assets/lashing_belts.webp',
+    path: '/products/ratchet-lashing',
+  },
+  {
+    title: 'Lifting Slings',
+    desc: 'High-strength polyester lifting slings manufactured for safe material handling and industrial lifting operations.',
     image: 'assets/web_sling_belts.webp',
-    path: '/web-sling',
+    path: '/products/lifting-slings',
+  },
+  {
+    title: 'Hardware',
+    desc: 'Premium lifting and lashing hardware including J Hooks, Ratchets and other cargo securing accessories.',
+    image: '/assets/rachet_hardware.jpg',
+    path: '/products/hardware',
   },
 ];
 

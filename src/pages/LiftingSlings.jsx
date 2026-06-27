@@ -16,56 +16,36 @@ const fade = {
 };
 
 const FEATURES = [
-  'High strength polyester webbing',
-  'Lightweight & flexible',
-  'Heavy duty reinforced stitching',
-  'Low elongation (≤ 7% at WLL)',
-  'Abrasion resistant',
-  'Oil & moisture resistant',
-  'Easy handling and storage',
-  'Color coded as per international standard',
+  "High Strength Polyester Webbing",
+  "Lightweight & Flexible",
+  "Low Elongation",
+  "Abrasion Resistant",
+  "Color Coded Capacity Identification",
+  "Reinforced Eye Loops",
+  "High Safety Factor",
+  "Easy Inspection & Handling",
 ];
 
 const APPLICATIONS = [
-  'Material handling',
-  'Steel coil lifting',
-  'Construction sites',
-  'Cargo lifting',
-  'Warehouses',
-  'Shipping industry',
-  'Heavy machinery movement',
-  'Logistics & transportation',
+  "Construction Industry",
+  "Material Handling",
+  "Steel Plants",
+  "Warehouses",
+  "Shipping Industry",
+  "Heavy Equipment Lifting",
+  "Engineering Projects",
+  "Logistics Operations",
 ];
 
 const SPECS = [
-  { label: 'Material', value: '100% High Tenacity Polyester' },
-  { label: 'Type', value: 'Flat Woven Webbing Sling (Eye to Eye)' },
-  { label: 'Safety Factor', value: '7:1 (Standard)' },
-  { label: 'Standard', value: 'EN 1492-1:2000 + A1:2008' },
-  { label: 'Capacity Range', value: '1 Ton to 10 Ton' },
-  { label: 'Temperature Range', value: '-40°C to +100°C' },
-  { label: 'Elongation', value: '≤ 7% at WLL' },
-  {
-    label: 'Stitching',
-    value: 'High strength polyester yarn, multi-stitch pattern',
-  },
-  {
-    label: 'Eye Type',
-    value: 'Reinforced flat eye with extra stitching',
-  },
-  {
-    label: 'Color Coding',
-    value: 'As per International Standard',
-  },
-  {
-    label: 'Label',
-    value: 'Blue label with capacity, length, SF & CE mark',
-  },
-  {
-    label: 'Application',
-    value:
-      'Lifting & Rigging, Material Handling, Industrial, Construction, Logistics',
-  },
+  { label: "Material", value: "100% High Tenacity Polyester" },
+  { label: "Types", value: "Flat, Duplex, Endless & Round Slings" },
+  { label: "Safety Factor", value: "7:1 Standard" },
+  { label: "Capacity", value: "1 Ton to 20 Ton" },
+  { label: "Standard", value: "EN 1492-1 / EN 1492-2" },
+  { label: "Temperature Range", value: "-40°C to +100°C" },
+  { label: "Color Coding", value: "International Standard" },
+  { label: "Application", value: "Industrial Lifting & Rigging" },
 ];
 
 const IMAGES = {
@@ -76,7 +56,7 @@ const IMAGES = {
   specification: '/assets/flat_sling_specification.png',
 };
 
-export default function WebSling() {
+export default function LiftingSlings() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -89,25 +69,23 @@ export default function WebSling() {
 
             <motion.div {...fade}>
               <span className="font-inter text-sm font-semibold text-primary tracking-wider uppercase">
-                Web Sling Belt
+                Lifting Slings
               </span>
 
               <h1 className="mt-3 font-poppins font-extrabold text-4xl sm:text-5xl text-accent leading-tight">
-                Polyester <span className="text-primary">Flat Web Sling</span>
+                Polyester <span className="text-primary">Lifting Slings</span>
               </h1>
 
               <p className="mt-6 font-inter text-lg text-muted-foreground leading-relaxed">
-                Polyester Flat Web Sling is a high-strength lifting sling
-                manufactured from 100% high tenacity polyester woven webbing.
-                It is specially designed for safe and efficient lifting of
-                heavy materials in industries such as construction, steel,
-                logistics, shipping, warehouses, engineering, and cargo
-                handling.
+                Gripton Safety Polyester Lifting Slings are manufactured from premium
+                high-tenacity polyester webbing for safe and efficient lifting operations.
+                Designed for industrial, construction, logistics, warehousing and heavy
+                material handling applications.
               </p>
-
+              
               <p className="mt-4 font-inter text-base text-muted-foreground leading-relaxed">
-                Engineered for flexibility, durability, and exceptional load
-                handling with minimal elongation and maximum safety compliance.
+                Available in Flat Web Slings, Duplex Slings, Endless Slings and Round
+                Slings with high safety factors and excellent durability.
               </p>
             </motion.div>
 

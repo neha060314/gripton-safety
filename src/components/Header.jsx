@@ -1,59 +1,122 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const LOGO_URL = "assets/gripton_safety_logo.png";
+const LOGO_URL = "/assets/gripton_safety_logo.png";
 
-const NAV_LINKS = [
-  { label: 'Home', path: '/' },
-  { label: 'Web Sling Belt', path: '/web-sling' },
-  { label: 'Lashing Belt', path: '/lashing-belt' },
-  { label: 'Contact', path: '/contact' },
+const PRODUCT_LINKS = [
+  {
+    label: "One Way Cargo Lashing",
+    path: "/products/one-way-cargo-lashing",
+  },
+  {
+    label: "Ratchet Lashing",
+    path: "/products/ratchet-lashing",
+  },
+  {
+    label: "Lifting Slings",
+    path: "/products/lifting-slings",
+  },
+  {
+    label: "Hardware",
+    path: "/products/hardware",
+  },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-
+        
         {/* Logo */}
-        <Link to="/" className="flex-shrink-0">
-          <img src={LOGO_URL} alt="Gripton Safety" className="h-14 w-auto" />
+        <Link to="/">
+          <img
+            src={LOGO_URL}
+            alt="Gripton Safety"
+            className="h-14 w-auto"
+          />
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map(link => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`font-inter text-sm font-medium tracking-wide transition-colors hover:text-primary ${
-                location.pathname === link.path
-                  ? 'text-primary'
-                  : 'text-foreground'
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+
+          <Link
+            to="/"
+            className={`font-medium ${
+              location.pathname === "/"
+                ? "text-primary"
+                : "text-foreground"
+            }`}
+          >
+            Home
+          </Link>
+
+          {/* Products Dropdown */}
+          <div className="relative group">
+            <button className="flex items-center gap-1 font-medium">
+              Products
+              <ChevronDown className="w-4 h-4" />
+            </button>
+
+          <div className="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+            <div className="w-72 bg-white rounded-xl shadow-xl border">
+                    
+              {PRODUCT_LINKS.map((product) => (
+                <Link
+                  key={product.path}
+                  to={product.path}
+                  className="block px-5 py-3 hover:bg-slate-50 transition"
+                >
+                  {product.label}
+                </Link>
+              ))}
+          
+            </div>
+          </div>
+
+          </div>
+
+          <Link
+            to="/about"
+            className={`font-medium ${
+              location.pathname === "/about"
+                ? "text-primary"
+                : "text-foreground"
+            }`}
+          >
+            About Us
+          </Link>
+
+          <Link
+            to="/contact"
+            className={`font-medium ${
+              location.pathname === "/contact"
+                ? "text-primary"
+                : "text-foreground"
+            }`}
+          >
+            Contact
+          </Link>
         </nav>
 
-        {/* Desktop Contact */}
+        {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4">
           <div className="text-right">
             <a
               href="tel:+919309272870"
-              className="block text-sm font-semibold text-accent hover:text-primary transition-colors"
+              className="block text-sm font-semibold text-accent"
             >
               +91 9309272870
             </a>
+
             <a
               href="tel:+918263066892"
-              className="block text-sm font-semibold text-accent hover:text-primary transition-colors"
+              className="block text-sm font-semibold text-accent"
             >
               +91 8263066892
             </a>
@@ -64,7 +127,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="bg-primary hover:bg-primary/90 text-white font-poppins font-semibold px-6">
+            <Button className="bg-primary text-white">
               <Phone className="w-4 h-4 mr-2" />
               Get a Quote
             </Button>
@@ -73,65 +136,59 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
           onClick={() => setOpen(!open)}
+          className="md:hidden"
         >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {open ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-white border-t border-border px-4 pb-4 space-y-2">
+        <div className="md:hidden bg-white border-t px-4 pb-4">
 
-          {NAV_LINKS.map(link => (
+          <Link
+            to="/"
+            onClick={() => setOpen(false)}
+            className="block py-3"
+          >
+            Home
+          </Link>
+
+          <div className="py-3 font-semibold">
+            Products
+          </div>
+
+          {PRODUCT_LINKS.map((product) => (
             <Link
-              key={link.path}
-              to={link.path}
+              key={product.path}
+              to={product.path}
               onClick={() => setOpen(false)}
-              className={`block py-3 font-inter text-sm font-medium border-b border-border/50 ${
-                location.pathname === link.path
-                  ? 'text-primary'
-                  : 'text-foreground'
-              }`}
+              className="block py-2 pl-4 text-sm"
             >
-              {link.label}
+              {product.label}
             </Link>
           ))}
 
-          <div className="pt-4 space-y-2">
-            <a
-              href="tel:+919309272870"
-              className="block text-sm font-medium text-accent"
-            >
-              +91 9309272870
-            </a>
-
-            <a
-              href="tel:+918263066892"
-              className="block text-sm font-medium text-accent"
-            >
-              +91 8263066892
-            </a>
-
-            <a
-              href="mailto:griptonsafety@gmail.com"
-              className="block text-sm text-muted-foreground"
-            >
-              griptonsafety@gmail.com
-            </a>
-          </div>
-
-          <a
-            href="https://wa.me/919309272870"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block pt-3"
+          <Link
+            to="/about"
+            onClick={() => setOpen(false)}
+            className="block py-3"
           >
-            <Button className="w-full bg-primary text-white font-poppins font-semibold">
-              Get a Quote
-            </Button>
-          </a>
+            About Us
+          </Link>
+
+          <Link
+            to="/contact"
+            onClick={() => setOpen(false)}
+            className="block py-3"
+          >
+            Contact
+          </Link>
         </div>
       )}
     </header>
