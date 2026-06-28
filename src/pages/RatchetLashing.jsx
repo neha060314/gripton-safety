@@ -172,7 +172,7 @@ export default function RatchetLashing() {
           <div className="grid md:grid-cols-4 gap-6 mt-16">
             {[
               ["5", "Width Options"],
-              ["4", "Hook Types"],
+              ["2", "Hook Types"],
               ["Custom", "Lengths"],
               ["100%", "Quality Checked"],
             ].map(([number, title]) => (
