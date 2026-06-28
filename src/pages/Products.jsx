@@ -30,7 +30,7 @@ const PRODUCTS = [
     title: "Hardware",
     description:
       "Comprehensive range of lifting and rigging hardware accessories.",
-    image: "/assets/ratchet_hardware.jpg",
+    image: "/assets/hardware_rachet.jpg",
     path: "/products/hardware",
   },
 ];
@@ -41,64 +41,55 @@ export default function Products() {
       <Header />
 
       {/* Hero */}
-
       <section className="pt-32 pb-20 bg-gradient-to-br from-slate-50 via-white to-orange-50/30">
         <div className="max-w-7xl mx-auto px-4 text-center">
-
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">
             Product Range
           </span>
-
           <h1 className="mt-4 text-5xl font-extrabold text-accent">
             Gripton Safety Products
           </h1>
-
           <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground">
             Discover our complete range of lifting, lashing and cargo
             securing solutions engineered for industrial safety,
             logistics and transportation applications.
           </p>
-
         </div>
       </section>
 
       {/* Product Cards */}
-
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4">
-
-          <div className="grid md:grid-cols-2 gap-8">
-
+          {/* Main Container Scaled up for Maximum Product Visibility */}
+          <div className="grid md:grid-cols-2 gap-12">
             {PRODUCTS.map((product) => (
               <Link
                 key={product.title}
                 to={product.path}
-                className="group bg-white rounded-2xl overflow-hidden border hover:shadow-xl transition-all duration-300"
+                className="group bg-white rounded-2xl overflow-hidden border hover:shadow-2xl hover:border-orange-200 transition-all duration-300 flex flex-col h-full"
               >
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-64 object-cover"
-                />
+                {/* Fixed Height Wrapper Box with Unified Multi-Asset Aspect Calibration */}
+                <div className="w-full h-80 bg-slate-50 overflow-hidden flex items-center justify-center relative border-b">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
 
-                <div className="p-6">
-
-                  <h3 className="text-2xl font-bold text-accent mb-3">
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold text-accent mb-3 group-hover:text-primary transition-colors">
                     {product.title}
                   </h3>
-
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-muted-foreground text-base leading-relaxed mb-6 flex-grow">
                     {product.description}
                   </p>
-
-                  <span className="text-primary font-semibold">
-                    View Product →
+                  <span className="text-primary font-semibold flex items-center gap-2 mt-auto">
+                    View Product <span className="transform transition-transform group-hover:translate-x-1">→</span>
                   </span>
-
                 </div>
               </Link>
             ))}
-
           </div>
         </div>
       </section>

@@ -202,7 +202,7 @@ export default function RoundWebSling() {
             <div>
 
               <img
-                src="/assets/round_sling_application.webp"
+                src="/assets/round_sling_application.png"
                 alt="Round Sling Applications"
                 className="rounded-3xl shadow-xl"
               />

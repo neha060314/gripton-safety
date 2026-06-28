@@ -204,7 +204,7 @@ export default function EyeToEye() {
             <div>
 
               <img
-                src="/assets/lifting_application.jpeg"
+                src="/assets/eye_to_eye_sling_application.png"
                 alt="Industrial Lifting"
                 className="rounded-3xl shadow-xl"
               />
