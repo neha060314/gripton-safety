@@ -7,14 +7,19 @@ import { Toaster } from "@/components/ui/toaster";
 import ScrollToTop from "./components/ScrollToTop";
 import PageNotFound from "./lib/PageNotFound";
 
+// Main Pages
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Certificates from "./pages/Certificates";
 
+// Product Pages
 import OneWayCargoLashing from "./pages/OneWayCargoLashing";
 import RatchetLashing from "./pages/RatchetLashing";
 import LiftingSlings from "./pages/LiftingSlings";
+import EyeToEye from "./pages/EyeToEye";
+import RoundWebSling from "./pages/RoundWebSling";
 import Hardware from "./pages/Hardware";
 
 function App() {
@@ -24,10 +29,13 @@ function App() {
         <ScrollToTop />
 
         <Routes>
-          {/* Home */}
+
+          {/* ================= HOME ================= */}
+
           <Route path="/" element={<Home />} />
 
-          {/* Products */}
+          {/* ================= PRODUCTS ================= */}
+
           <Route path="/products" element={<Products />} />
 
           <Route
@@ -46,18 +54,48 @@ function App() {
           />
 
           <Route
+            path="/products/lifting-slings/eye-to-eye"
+            element={<EyeToEye />}
+          />
+
+          <Route
+            path="/products/lifting-slings/round-web-sling"
+            element={<RoundWebSling />}
+          />
+
+          <Route
             path="/products/hardware"
             element={<Hardware />}
           />
 
-          {/* About */}
-          <Route path="/about" element={<About />} />
+          {/* ================= CERTIFICATES ================= */}
 
-          {/* Contact */}
-          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/certificates"
+            element={<Certificates />}
+          />
 
-          {/* 404 */}
-          <Route path="*" element={<PageNotFound />} />
+          {/* ================= ABOUT ================= */}
+
+          <Route
+            path="/about"
+            element={<About />}
+          />
+
+          {/* ================= CONTACT ================= */}
+
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
+
+          {/* ================= 404 ================= */}
+
+          <Route
+            path="*"
+            element={<PageNotFound />}
+          />
+
         </Routes>
       </Router>
 

@@ -3,239 +3,407 @@ import Footer from "../components/Footer";
 import ContactCTA from "../components/ContactCTA";
 
 import { motion } from "framer-motion";
-import { CheckCircle, Wrench } from "lucide-react";
+import {
+  CheckCircle,
+  ArrowRight,
+  Package,
+  ShieldCheck,
+  Truck,
+  Globe,
+} from "lucide-react";
+
+import { Link } from "react-router-dom";
 
 const fade = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
   transition: { duration: 0.6 },
 };
 
 const FEATURES = [
-  "Single Use Cargo Securing",
-  "High Tensile Polyester",
-  "Cost Effective Solution",
-  "Easy Installation",
-  "Export Container Safe",
-  "Lightweight Design",
-  "Weather Resistant",
-  "Reliable Cargo Restraint",
+  {
+    title: "High Tensile Strength",
+    desc: "Manufactured using premium polyester webbing for maximum cargo restraint.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Cost Effective",
+    desc: "Designed for single-use applications, reducing logistics costs.",
+    icon: Package,
+  },
+  {
+    title: "Easy Installation",
+    desc: "Quick and simple installation without requiring complex tools.",
+    icon: Truck,
+  },
+  {
+    title: "Global Logistics",
+    desc: "Trusted for export containers, shipping, and international freight.",
+    icon: Globe,
+  },
 ];
 
 const APPLICATIONS = [
   "Export Containers",
   "Ocean Freight",
   "Road Transportation",
-  "Logistics Industry",
-  "Warehouse Operations",
-  "Cargo Securing",
-  "International Shipping",
-  "Heavy Goods Transportation",
+  "Warehouse Logistics",
+  "Heavy Machinery",
+  "Industrial Cargo",
 ];
 
 const SPECS = [
   { label: "Material", value: "High Strength Polyester Webbing" },
-  { label: "Type", value: "One Way Cargo Lashing" },
+  { label: "Product Type", value: "One Way Cargo Lashing" },
   { label: "Usage", value: "Single Use" },
-  { label: "Breaking Strength", value: "Custom Available" },
-  { label: "Application", value: "Cargo Securing" },
-  { label: "Length", value: "As Per Requirement" },
-  { label: "Color", value: "Custom Available" },
+  { label: "Breaking Strength", value: "Available on Request" },
+  { label: "Length", value: "Customizable" },
   { label: "Packaging", value: "Export Grade Packaging" },
 ];
-
-const PRODUCT_IMAGE = "/assets/one_way_cargo.jpg";
-
-const APPLICATION_IMAGE =
-  "/assets/one_way_cargo_applications.png";
 
 export default function OneWayCargoLashing() {
   return (
     <div className="min-h-screen bg-white">
+
       <Header />
 
-      {/* HERO SECTION */}
-      <section className="pt-28 pb-20 bg-gradient-to-br from-slate-50 via-white to-orange-50/30">
+      {/* HERO */}
+
+      <section className="pt-32 pb-24 bg-gradient-to-br from-slate-50 via-white to-orange-50">
+
         <div className="max-w-7xl mx-auto px-4">
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
             <motion.div {...fade}>
-              <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+
+              <span className="uppercase tracking-[4px] text-primary font-semibold">
+
                 Cargo Securing Solutions
+
               </span>
 
-              <h1 className="mt-3 text-5xl font-extrabold text-accent">
+              <h1 className="mt-5 text-5xl lg:text-6xl font-extrabold text-accent leading-tight">
+
                 One Way
                 <span className="text-primary"> Cargo Lashing</span>
+
               </h1>
 
-              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                Gripton Safety One Way Cargo Lashing Systems are designed
-                to secure cargo safely during transportation and export
-                shipments. Manufactured using premium polyester webbing,
-                they provide a reliable and economical cargo restraint
-                solution.
+              <p className="mt-8 text-lg leading-8 text-muted-foreground">
+
+                Gripton Safety One Way Cargo Lashing Systems provide a
+                dependable and economical solution for securing cargo
+                during transportation. Manufactured using premium
+                polyester webbing, they ensure excellent load stability
+                for export containers, logistics operations, and
+                industrial freight movement.
+
               </p>
 
-              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-                Widely used in export containers, logistics operations,
-                warehousing and international shipping where safe load
-                securing is critical.
-              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+
+                <Link to="/contact">
+
+                  <button className="bg-primary hover:bg-orange-600 transition text-white px-8 py-4 rounded-xl font-semibold flex items-center">
+
+                    Request Quote
+
+                    <ArrowRight className="ml-3" />
+
+                  </button>
+
+                </Link>
+
+              </div>
+
             </motion.div>
 
             <motion.div {...fade}>
-              <img
-                src={PRODUCT_IMAGE}
-                alt="One Way Cargo Lashing"
-                className="w-full rounded-2xl shadow-xl"
-              />
+
+              <div className="bg-white rounded-[32px] shadow-2xl p-8">
+
+                <img
+                  src="/assets/one_way_cargo_lashing.png"
+                  alt="One Way Cargo Lashing"
+                  className="w-full h-[500px] object-contain"
+                />
+
+              </div>
+
             </motion.div>
 
           </div>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-
-          <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-              Features
-            </span>
-
-            <h2 className="mt-3 text-4xl font-bold text-accent">
-              Product Features
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-4">
-
-            {FEATURES.map((feature) => (
-              <div
-                key={feature}
-                className="flex gap-3 p-5 bg-slate-50 rounded-xl border"
-              >
-                <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                <span>{feature}</span>
-              </div>
-            ))}
-
-          </div>
 
         </div>
+
       </section>
 
-      {/* APPLICATIONS */}
-      <section className="py-20 bg-slate-50">
+      {/* WHY CHOOSE */}
+
+      <section className="py-24 bg-white">
+
         <div className="max-w-7xl mx-auto px-4">
 
-          <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-              Applications
+          <div className="text-center mb-16">
+
+            <span className="uppercase tracking-[4px] text-primary font-semibold">
+
+              Product Advantages
+
             </span>
 
-            <h2 className="mt-3 text-4xl font-bold text-accent">
-              Industrial Applications
-            </h2>
-          </div>
+            <h2 className="mt-4 text-5xl font-bold text-accent">
 
-          <div className="grid md:grid-cols-4 gap-4">
+              Why Choose One Way Cargo Lashing?
 
-            {APPLICATIONS.map((item) => (
-              <div
-                key={item}
-                className="p-5 bg-white rounded-xl border text-center"
-              >
-                <Wrench className="mx-auto mb-2 text-primary" />
-                <span>{item}</span>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* PRODUCT GALLERY */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-
-          <div className="text-center mb-12">
-
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-              Product Gallery
-            </span>
-
-            <h2 className="mt-3 text-4xl font-bold text-accent">
-              One Way Cargo Lashing Applications
             </h2>
 
-            <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
-              Our One Way Cargo Lashing Systems are widely used for
-              securing export cargo, shipping containers, palletized
-              goods, industrial equipment and heavy loads during
-              transportation and storage.
+            <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground leading-8">
+
+              Designed for safe cargo transportation, our One Way Cargo
+              Lashing systems combine strength, durability and ease of
+              installation to provide reliable cargo restraint across
+              industrial logistics applications.
+
             </p>
 
           </div>
 
-          <motion.div {...fade}>
-            <img
-              src={APPLICATION_IMAGE}
-              alt="One Way Cargo Lashing Applications"
-              className="w-full rounded-2xl shadow-xl"
-            />
-          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            {FEATURES.map((item) => {
+
+              const Icon = item.icon;
+
+              return (
+
+                <motion.div
+                  key={item.title}
+                  {...fade}
+                  className="bg-slate-50 rounded-3xl p-8 border hover:shadow-xl transition duration-500"
+                >
+
+                  <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center">
+
+                    <Icon size={30} />
+
+                  </div>
+
+                  <h3 className="mt-6 text-2xl font-bold text-accent">
+
+                    {item.title}
+
+                  </h3>
+
+                  <p className="mt-4 text-muted-foreground leading-7">
+
+                    {item.desc}
+
+                  </p>
+
+                </motion.div>
+
+              );
+
+            })}
+
+          </div>
 
         </div>
+
       </section>
 
-      {/* SPECIFICATIONS */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4">
+      {/* APPLICATIONS */}
 
-          <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-              Specifications
-            </span>
+      <section className="py-24 bg-slate-50">
 
-            <h2 className="mt-3 text-4xl font-bold text-accent">
-              Product Specifications
-            </h2>
-          </div>
+        <div className="max-w-7xl mx-auto px-4">
 
-          <div className="rounded-xl border overflow-hidden bg-white">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            {SPECS.map((spec, index) => (
-              <div
-                key={spec.label}
-                className={`flex justify-between px-6 py-4 ${
-                  index % 2 === 0
-                    ? "bg-white"
-                    : "bg-slate-50"
-                }`}
-              >
-                <span className="font-semibold">
-                  {spec.label}
-                </span>
+            <motion.div {...fade}>
 
-                <span>
-                  {spec.value}
-                </span>
+              <img
+                src="/assets/one_way_cargo_applications.png"
+                alt="Applications"
+                className="rounded-[32px] shadow-xl"
+              />
+
+            </motion.div>
+
+            <motion.div {...fade}>
+
+              <span className="uppercase tracking-[4px] text-primary font-semibold">
+
+                Applications
+
+              </span>
+
+              <h2 className="mt-5 text-4xl font-bold text-accent">
+
+                Ideal For Multiple Industrial Applications
+
+              </h2>
+
+              <p className="mt-6 text-lg leading-8 text-muted-foreground">
+
+                Gripton Safety One Way Cargo Lashing is widely used
+                across logistics, warehousing and international shipping
+                industries where secure cargo transportation is essential.
+
+              </p>
+
+              <div className="mt-10 space-y-5">
+
+                {APPLICATIONS.map((item) => (
+
+                  <div
+                    key={item}
+                    className="flex items-center gap-4"
+                  >
+
+                    <CheckCircle className="text-primary" />
+
+                    <span className="text-lg">
+
+                      {item}
+
+                    </span>
+
+                  </div>
+
+                ))}
+
               </div>
-            ))}
+
+            </motion.div>
 
           </div>
 
         </div>
+
+      </section>
+
+      {/* ================= TECHNICAL SPECIFICATIONS ================= */}
+
+      <section className="py-24 bg-white">
+
+        <div className="max-w-5xl mx-auto px-4">
+
+          <div className="text-center mb-14">
+
+            <span className="uppercase tracking-[4px] text-primary font-semibold">
+
+              Technical Details
+
+            </span>
+
+            <h2 className="mt-4 text-5xl font-bold text-accent">
+
+              Product Specifications
+
+            </h2>
+
+            <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
+
+              Manufactured using premium quality polyester webbing,
+              our One Way Cargo Lashing systems are available in
+              different configurations to suit various cargo
+              securing requirements.
+
+            </p>
+
+          </div>
+
+          <div className="overflow-hidden rounded-3xl shadow-xl border border-slate-200">
+
+            <table className="w-full">
+
+              <tbody>
+
+                {SPECS.map((item, index) => (
+
+                  <tr
+                    key={item.label}
+                    className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                  >
+
+                    <td className="px-8 py-6 font-semibold text-accent border-b">
+
+                      {item.label}
+
+                    </td>
+
+                    <td className="px-8 py-6 text-muted-foreground border-b">
+
+                      {item.value}
+
+                    </td>
+
+                  </tr>
+
+                ))}
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ================= CTA ================= */}
+
+      <section className="py-24 bg-gradient-to-r from-primary to-orange-500">
+
+        <div className="max-w-5xl mx-auto px-4 text-center text-white">
+
+          <span className="uppercase tracking-[4px] font-semibold">
+
+            Need Custom Solutions?
+
+          </span>
+
+          <h2 className="mt-5 text-5xl font-extrabold">
+
+            Secure Every Shipment
+            With Confidence
+
+          </h2>
+
+          <p className="mt-8 text-lg leading-8 opacity-95 max-w-3xl mx-auto">
+
+            Whether you're transporting industrial equipment,
+            export cargo or heavy goods, Gripton Safety provides
+            dependable One Way Cargo Lashing solutions designed
+            for superior load restraint and transportation safety.
+
+          </p>
+
+          <Link to="/contact">
+
+            <button className="mt-10 bg-white text-primary hover:bg-slate-100 transition-all duration-300 px-10 py-4 rounded-xl font-bold text-lg flex items-center mx-auto">
+
+              Request a Quote
+
+              <ArrowRight className="ml-3" />
+
+            </button>
+
+          </Link>
+
+        </div>
+
       </section>
 
       <ContactCTA />
+
       <Footer />
+
     </div>
   );
 }

@@ -9,7 +9,7 @@ const PRODUCTS = [
     title: "One Way Cargo Lashing",
     description:
       "Reliable single-use cargo securing systems for export containers and freight transportation.",
-    image: "/assets/one_way_cargo.jpg",
+    image: "/assets/one_way_cargo.png",
     path: "/products/one-way-cargo-lashing",
   },
   {
@@ -30,7 +30,7 @@ const PRODUCTS = [
     title: "Hardware",
     description:
       "Comprehensive range of lifting and rigging hardware accessories.",
-    image: "/assets/rachet_hardware.jpg",
+    image: "/assets/ratchet_hardware.jpg",
     path: "/products/hardware",
   },
 ];

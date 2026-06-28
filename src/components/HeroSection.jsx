@@ -1,62 +1,103 @@
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Shield } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Shield } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-white to-orange-50/30 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+          {/* Left Content */}
+
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-2 mb-6">
               <Shield className="w-5 h-5 text-primary" />
-              <span className="font-inter text-sm font-semibold text-primary tracking-wider uppercase">Secure. Strong. Reliable.</span>
+
+              <span className="text-sm font-semibold uppercase tracking-wider text-primary">
+                Secure. Strong. Reliable.
+              </span>
             </div>
-            <h1 className="font-poppins font-extrabold text-4xl sm:text-5xl lg:text-6xl text-accent leading-tight tracking-tight">
-              Premium Industrial{' '}
-              <span className="text-primary">{"Lifting & Lashing"}</span>{' '}
+
+            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight text-accent">
+              Premium Industrial{" "}
+              <span className="text-primary">
+                Lifting & Lashing
+              </span>{" "}
               Solutions
             </h1>
-            <p className="mt-6 font-inter text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Gripton Safety manufactures high-performance lashing belts and polyester web sling belts engineered for industrial durability, reliability, and safety.
+
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
+              Gripton Safety manufactures premium quality polyester web
+              slings, ratchet lashing belts, cargo securing systems and
+              industrial lifting accessories engineered for maximum
+              safety, durability and reliable performance across
+              construction, logistics, shipping and heavy industries.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/web-sling">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-poppins font-bold px-8 h-14 text-base">
-                  Explore Products <ArrowRight className="ml-2 w-5 h-5" />
+
+            <div className="mt-10 flex flex-wrap gap-5">
+
+              {/* FIXED BUTTON */}
+
+              <Link to="/products">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 h-14 font-bold"
+                >
+                  Explore Products
+
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
+
               <Link to="/contact">
-                <Button size="lg" variant="outline" className="border-accent text-accent font-poppins font-bold px-8 h-14 text-base hover:bg-accent hover:text-white">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-accent text-accent hover:bg-accent hover:text-white px-8 h-14 font-bold"
+                >
                   Contact Us
                 </Button>
               </Link>
             </div>
           </motion.div>
 
+          {/* Right Image */}
+
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-slate-100 to-orange-50 rounded-2xl aspect-square lg:aspect-[4/3] flex items-center justify-center overflow-hidden shadow-2xl shadow-orange-100/50">
+            <div className="overflow-hidden rounded-3xl shadow-2xl border bg-white">
+
               <img
-                src="public/assets/flat_sling_images.png"
-                alt="Polyester Flat Sling - Industrial Lifting Solutions"
+                src="/assets/homepage-banner.png"
+                alt="Industrial Lifting Equipment"
                 className="w-full h-full object-cover"
               />
+
             </div>
-            <div className="absolute -bottom-4 -left-4 bg-primary text-white rounded-xl px-6 py-4 shadow-lg">
-              <p className="font-poppins font-bold text-2xl">7:1</p>
-              <p className="font-inter text-xs">Safety Factor</p>
+
+            <div className="absolute -bottom-5 -left-5 bg-primary text-white rounded-xl px-6 py-4 shadow-xl">
+
+              <h3 className="text-3xl font-bold">
+                7:1
+              </h3>
+
+              <p className="text-sm">
+                Safety Factor
+              </p>
+
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

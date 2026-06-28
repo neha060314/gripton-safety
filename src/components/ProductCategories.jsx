@@ -7,7 +7,7 @@ const CATEGORIES = [
   {
     title: 'One Way Cargo Lashing',
     desc: 'Reliable single-use cargo securing systems designed for export containers, freight transportation, and logistics applications.',
-    image: '/assets/one_way_cargo.jpg',
+    image: '/assets/one_way_cargo.png',
     path: '/products/one-way-cargo-lashing',
   },
   {
@@ -19,7 +19,7 @@ const CATEGORIES = [
   {
     title: 'Lifting Slings',
     desc: 'High-strength polyester lifting slings manufactured for safe material handling and industrial lifting operations.',
-    image: 'assets/web_sling_belts.webp',
+    image: '/assets/web_sling_belts.webp',
     path: '/products/lifting-slings',
   },
   {

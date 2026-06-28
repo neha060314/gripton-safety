@@ -67,7 +67,7 @@ export default function About() {
 
             <div>
               <img
-                src="/assets/about-company.jpg"
+                src="/assets/gripton_safety_logo.png"
                 alt="Gripton Safety"
                 className="rounded-2xl shadow-xl"
               />
