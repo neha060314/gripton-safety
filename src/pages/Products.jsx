@@ -30,7 +30,7 @@ const PRODUCTS = [
     title: "Hardware",
     description:
       "Comprehensive range of lifting and rigging hardware accessories.",
-    image: "/assets/hardware_rachet.jpg",
+    image: "/assets/hardware.jpg",
     path: "/products/hardware",
   },
 ];

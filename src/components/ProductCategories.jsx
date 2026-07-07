@@ -25,7 +25,7 @@ const CATEGORIES = [
   {
     title: 'Hardware',
     desc: 'Premium lifting and lashing hardware including J Hooks, Ratchets and other cargo securing accessories.',
-    image: '/assets/hardware_rachet.jpg',
+    image: '/assets/hardware.jpg',
     path: '/products/hardware',
   },
 ];

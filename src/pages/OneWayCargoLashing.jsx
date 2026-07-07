@@ -125,7 +125,7 @@ export default function OneWayCargoLashing() {
               <div className="bg-white rounded-[32px] shadow-2xl p-8">
 
                 <img
-                  src="/assets/one_way_cargo_lashing.png"
+                  src="/assets/one_way_cargo_lashing.jpeg"
                   alt="One Way Cargo Lashing"
                   className="w-full h-[500px] object-contain"
                 />
@@ -226,7 +226,7 @@ export default function OneWayCargoLashing() {
             <motion.div {...fade}>
 
               <img
-                src="/assets/one_way_cargo_applications.png"
+                src="/assets/one_way_cargo_applications.jpeg"
                 alt="Applications"
                 className="rounded-[32px] shadow-xl"
               />

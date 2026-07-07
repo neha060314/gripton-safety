@@ -176,7 +176,7 @@ export default function Hardware() {
 
             <div className="order-1 lg:order-2 bg-white rounded-3xl shadow-lg p-10">
               <img
-                src="/assets/hardware_rachet.jpg"
+                src="/assets/hardware.jpg"
                 alt="Ratchet Buckle"
                 className="w-full h-full min-h-[240px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
